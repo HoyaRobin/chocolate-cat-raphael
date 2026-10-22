@@ -227,4 +227,35 @@ const $=id=>document.getElementById(id),cat=$('cat'),bubble=$('bubble');let hear
 <script>
 (()=>{const stage=document.querySelector('.emotion-stage');if(!stage)return;const card=stage.querySelector('.emotion-card');if(card){const blink=document.createElement('div');blink.className='blink-wash';card.appendChild(blink)}const label=document.createElement('div');label.className='micro-label';label.textContent='✨ 微表情動畫 · 無聲陪伴';stage.appendChild(label)})();
 </script>
+
+<style>
+/* v2.0.1 layout hotfix: give the cat and controls separate, non-overlapping zones. */
+@media (min-width: 761px) {
+  .scene {top:88px;right:min(590px,49vw);bottom:0;left:0;overflow:hidden}
+  .panel {left:auto;right:24px;top:50%;bottom:auto;transform:translateY(-50%);width:min(540px,calc(49vw - 48px));max-height:calc(100dvh - 110px);overflow-y:auto;z-index:10}
+  .cat {left:50%;top:57%}
+  .bubble {top:max(10px,calc(57% - 255px))}
+  .top {z-index:11}
+}
+@media (max-width:760px) {
+  .top {top:10px;left:12px;right:12px;z-index:11}
+  .top .sub {font-size:11px;max-width:220px}
+  .pill {padding:7px 10px;font-size:12px}
+  .scene {top:74px;bottom:clamp(250px,41dvh,345px);left:0;right:0}
+  .panel {left:50%;right:auto;bottom:10px;top:auto;transform:translateX(-50%);width:calc(100% - 20px);max-height:calc(41dvh - 18px);overflow-y:auto;padding:12px;z-index:10}
+  .cat {left:50%;top:59%;height:clamp(150px,34dvh,290px);width:clamp(130px,29dvh,235px)}
+  .bubble {top:6px;max-width:min(75vw,270px);padding:9px 13px;font-size:13px}
+  .stats {margin-bottom:7px}
+  .mood-actions {margin-top:7px}
+  .mood-actions button {padding:9px 4px;font-size:12px}
+  .hint {margin-top:6px}
+  .reflect {margin-top:8px}
+  .emotion-card {max-height:58%;height:min(290px,55dvh);width:min(260px,70vw)}
+}
+@media(max-height:610px) and (min-width:761px) {
+  .scene {top:65px}
+  .cat {width:240px;height:290px}
+  .panel {max-height:calc(100dvh - 76px);padding:10px}
+}
+</style>
 </body></html>
