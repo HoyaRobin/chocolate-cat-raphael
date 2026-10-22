@@ -268,4 +268,25 @@ $('rest').onclick=()=>act(sleeping?'idle':'sleep',pick(sleepLines));cat.addEvent
 }
 </style>
 
+
+<style>
+/* Approved C version: lonely cat runs toward camera for a hug. */
+.emotion-stage.lonely.visible .emotion-card{
+  animation: lonelyPounceIn .78s cubic-bezier(.18,.9,.2,1.18) both, tinySad 1.9s .82s ease-in-out infinite !important;
+  transform-origin:50% 82%;
+}
+@keyframes lonelyPounceIn{
+  0%{opacity:0;transform:translateY(44px) scale(.34)}
+  38%{opacity:1;transform:translateY(18px) scale(.66)}
+  68%{opacity:1;transform:translateY(2px) scale(1.08)}
+  82%{opacity:1;transform:translateY(-3px) scale(.97)}
+  100%{opacity:1;transform:translateY(0) scale(1)}
+}
+.emotion-stage.lonely.visible .emotion-card img{
+  animation: catBreathe 3.2s .82s ease-in-out infinite !important;
+}
+@media(prefers-reduced-motion:reduce){
+  .emotion-stage.lonely.visible .emotion-card{animation:tinySad 1.9s ease-in-out infinite !important}
+}
+</style>
 </body></html>
